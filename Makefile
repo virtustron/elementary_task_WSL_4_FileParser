@@ -8,14 +8,11 @@ bin = ./bin/
 all: main
 		
 main: build_all
-	g++ -o $(bin)main $(bin)main.o $(bin)Envelope.o $(bin)EnvelopeComparator.o $(bin)EnvelopeConsoleUI.o $(bin)InvalidEnvelopeSizeException.o
+	g++ -g -o $(bin)main $(bin)main.o $(bin)TextFile.o 
 
 build_all:
-	g++ -o $(bin)Envelope.o -c $(src)Envelope.cpp
-	g++ -o $(bin)EnvelopeComparator.o -c $(src)EnvelopeComparator.cpp
-	g++ -o $(bin)EnvelopeConsoleUI.o -c $(src)EnvelopeConsoleUI.cpp
-	g++ -o $(bin)InvalidEnvelopeSizeException.o -c $(src)InvalidEnvelopeSizeException.cpp
-	g++ -o $(bin)main.o -c $(src)main.cpp
+	g++ -g -o $(bin)TextFile.o -c $(src)TextFile.cpp
+	g++ -g -o $(bin)main.o -c $(src)main.cpp
 
 
 

@@ -26,7 +26,7 @@ void TextFile::ReadContent()
 {
 	// TODO read file by chunks
 	
-	m_file_stream.rdbuf(m_file_content, )
+	//m_file_stream.rdbuf(m_file_content, )
 }
 
 void TextFile::WriteContent()
@@ -36,11 +36,16 @@ void TextFile::WriteContent()
 
 std::string TextFile::get_content()
 {
-
+	return m_file_content;
 }
 
 void TextFile::set_content(std::string file_content)
 {
+	// TODO add content validation
+	if (file_content == "")
+	{
+		throw std::invalid_argument("File content to set is empty"); 
+	}
 
 }
 
