@@ -12,6 +12,9 @@ public:
 	~TextFile();
 	void ReadContent();
 	void WriteContent();
+
+	bool IsEndOfFile() const;
+
 	std::string get_content();
 	void set_content(const std::string & file_content);
 private:

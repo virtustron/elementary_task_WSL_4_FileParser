@@ -34,6 +34,12 @@ void TextFile::WriteContent()
 
 }
 
+bool TextFile::IsEndOfFile() const
+{
+	return true;
+}
+
+
 std::string TextFile::get_content()
 {
 	return m_file_content;
