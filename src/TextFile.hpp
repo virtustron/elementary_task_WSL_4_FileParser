@@ -13,7 +13,7 @@ public:
 	void ReadContent();
 	void WriteContent();
 	std::string get_content();
-	void set_content(std::string file_content);
+	void set_content(const std::string & file_content);
 private:
 	std::string m_file_content;
 	std::string m_file_name;

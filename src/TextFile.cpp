@@ -39,7 +39,7 @@ std::string TextFile::get_content()
 	return m_file_content;
 }
 
-void TextFile::set_content(std::string file_content)
+void TextFile::set_content(const std::string & file_content)
 {
 	// TODO add content validation
 	if (file_content == "")
