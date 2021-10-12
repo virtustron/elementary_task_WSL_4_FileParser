@@ -9,7 +9,7 @@ TextFileParser::~TextFileParser()
 {
 }
 
-int ParseFile(const TextFile& text_file,  const ParseType parse_type)
+int TextFileParser::ParseFile(const TextFile& text_file,  const ParseType parse_type)
 {
     int occurences_count = 0;
     
@@ -30,31 +30,49 @@ int ParseFile(const TextFile& text_file,  const ParseType parse_type)
     return occurences_count;
 }
 
-int CountSubstringOccurences(const TextFile& text_file)
+int TextFileParser::CountSubstringOccurences(const TextFile& text_file)
 {
+    int total_occurences_number = 0;
+
     while (!text_file.IsEndOfFile())
     {
         TextFileChunk chunk;
         chunk = text_file.ReadNextChunk();
-        
+        total_occurences_number += CountSubstringOccurences(chunk);
+    }
+    
+    return total_occurences_number;
+}
+
+int TextFileParser::CountSubstringOccurences(const TextFileChunk& text_file_chunk)
+{
+    
+    return 0;
+}
+
+
+
+int TextFileParser::ReplaceSubstringOccurences(const TextFile& text_file)
+{
+    int total_occurences_number = 0;
+    
+    while (!text_file.IsEndOfFile())
+    {
+        TextFileChunk chunk;
+        chunk = text_file.ReadNextChunk();
+        total_occurences_number += ReplaceSubstringOccurences(chunk);
+        text_file.InsertChunk(chunk);
 
     }
     
-
-
-    
-    return 0;
+    return total_occurences_number;
 }
 
-
-int ReplaceSubstringOccurences(const TextFile& text_file)
+int TextFileParser::ReplaceSubstringOccurences(TextFileChunk& text_file_chunk)
 {
-    return 0;
+
 }
 
-int ParseChunk(const ParseType parse_type, const std::string& search, const std::string& replace = "")
-{
-    return 0;
-}
+
 
 

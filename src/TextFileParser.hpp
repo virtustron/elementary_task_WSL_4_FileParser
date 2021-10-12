@@ -10,14 +10,15 @@ public:
     TextFileParser(TextFile& text_file);
     ~TextFileParser();
 
-    int Parse(const ParseType parse_type, const std::string& search, const std::string& replace = "");
+    int ParseFile(const TextFile& text_file,  const ParseType parse_type);
 
 private:
-    /* data */
     TextFile& m_text_file;
 
     int CountSubstringOccurences(const TextFile& text_file);
+    int CountSubstringOccurences(const TextFileChunk& text_file_chunk);
     int ReplaceSubstringOccurences(const TextFile& text_file);
+    int ReplaceSubstringOccurences(TextFileChunk& text_file_chunk);
 };
 
 
