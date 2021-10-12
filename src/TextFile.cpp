@@ -22,21 +22,27 @@ TextFile::~TextFile()
 		m_file_stream.close();
 }
 
-void TextFile::ReadContent()
-{
-	// TODO read file by chunks
-	
-	//m_file_stream.rdbuf(m_file_content, )
-}
-
-void TextFile::WriteContent()
-{
-
-}
-
 bool TextFile::IsEndOfFile() const
 {
 	return true;
+}
+
+TextFileChunk TextFile::ReadNextChunk(const int chunk_index, const int chunk_size) const
+{
+	// TODO read next chunk
+	TextFileChunk chunk;
+	/*
+		int m_chunk_size;
+		int m_chunk_index;
+		int m_chunks_count;
+	*/
+	return chunk;
+}
+
+void TextFile::InsertChunk(const int chunk_index, const int chunk_size) const
+{
+	// TODO insert chunk
+	// for REPLACE_OCCURENCES ParseType 
 }
 
 

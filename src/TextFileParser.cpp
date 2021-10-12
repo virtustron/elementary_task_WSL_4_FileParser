@@ -32,7 +32,16 @@ int ParseFile(const TextFile& text_file,  const ParseType parse_type)
 
 int CountSubstringOccurences(const TextFile& text_file)
 {
+    while (!text_file.IsEndOfFile())
+    {
+        TextFileChunk chunk;
+        chunk = text_file.ReadNextChunk();
+        
+
+    }
     
+
+
     
     return 0;
 }
